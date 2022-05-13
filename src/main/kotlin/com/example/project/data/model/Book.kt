@@ -1,15 +1,14 @@
 package com.example.project.data.model
 
 import javax.persistence.*
-import com.example.project.data.model.Entity
 
-@javax.persistence.Entity
+@Entity
 @Table(name = "book")
-data class Book(
+class Book(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    override var id: Long = -1,
+    override var id: Long,
 
     @Column(nullable = false)
-    var name: String = ""
-): Entity()
+    var name: String,
+): BaseEntity()

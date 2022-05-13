@@ -1,5 +1,5 @@
 package com.example.project.data.model
 
-abstract class Entity {
+abstract class BaseEntity {
     abstract var id: Long
 }

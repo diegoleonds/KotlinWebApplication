@@ -1,9 +1,9 @@
 package com.example.project.data.dao
 
-import com.example.project.data.model.Entity
+import com.example.project.data.model.BaseEntity
 import com.example.project.foundation.BasicIoOperations
 
-abstract class Dao<E: Entity>: BasicIoOperations<E, E> {
+abstract class Dao<E: BaseEntity>: BasicIoOperations<E, E> {
     override fun insert(entity: E) {
         TODO("Not yet implemented")
     }
