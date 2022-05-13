@@ -1,5 +1,5 @@
 package com.example.project.foundation.Error
 
-interface ErrorHandler {
-    fun getError(throwable: Throwable): ErrorEntity
+interface ErrorHandler<E: BaseError> {
+    fun getError(throwable: Throwable): E
 }

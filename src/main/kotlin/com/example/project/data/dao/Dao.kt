@@ -1,26 +1,31 @@
 package com.example.project.data.dao
 
+import com.example.project.data.Error.DatabaseError
 import com.example.project.data.model.BaseEntity
-import com.example.project.foundation.BasicIoOperations
+import com.example.project.foundation.Error.ErrorHandler
+import com.example.project.foundation.Result.Result
 
-abstract class Dao<E: BaseEntity>: BasicIoOperations<E, E> {
-    override fun insert(entity: E) {
+abstract class Dao<E: BaseEntity> {
+
+    protected abstract val errorHandler: ErrorHandler<DatabaseError>
+
+    fun insert(entity: E): Result<Long> {
         TODO("Not yet implemented")
     }
 
-    override fun getById(id: Long): E {
+    fun getById(id: Long): Result<E> {
         TODO("Not yet implemented")
     }
 
-    override fun getByPage(page: Int, offset: Int): List<E> {
+    fun getByPage(page: Int, offset: Int): Result<List<E>> {
         TODO("Not yet implemented")
     }
 
-    override fun update(entity: E) {
+    fun update(entity: E): Result<Long> {
         TODO("Not yet implemented")
     }
 
-    override fun delete(entity: E) {
+    fun delete(entity: E): Result<Long> {
         TODO("Not yet implemented")
     }
 }
